@@ -9,6 +9,9 @@ public class TetriBlock : MonoBehaviour
     public static int width=10;
     public static int height = 20;
     public Vector3 rotationpoint;
+
+    public static int spawnx = 5;
+    public static int spawny = 17;
     public static Transform[,] grid = new Transform[width, height];
 
     // Start is called before the first frame update
@@ -80,7 +83,7 @@ public class TetriBlock : MonoBehaviour
             }
 
     }
-    bool HasLine(int i)
+     bool HasLine(int i)
     {
         for(int j=0;j<width;j++)
         {
@@ -90,6 +93,14 @@ public class TetriBlock : MonoBehaviour
         return true;
     }
 
+    public bool Hastop(int j)
+    {
+        if (grid[5, 17] != null)
+            return true;
+
+        return false;
+    }
+
     void CheckLines()
     {
         for(int i=height-1;i>=0;i--)
@@ -97,6 +108,8 @@ public class TetriBlock : MonoBehaviour
             if(HasLine(i))
             {
                 DeleteLine(i);
+                //
+                FindObjectOfType<Scores>().Scoring();
                 RowDown(i);
             }
         }
@@ -141,9 +154,12 @@ public class TetriBlock : MonoBehaviour
             //Debug.Log(roundedX);
 
             //Debug.Log(roundedY);
-            if (roundedX < 0 || roundedX >= width || roundedY < 0 || roundedY >=height)
-            return false;
-
+            if (roundedX < 0 || roundedX >= width || roundedY < 0 || roundedY >= height)
+            {
+                /*if (roundedY >= height)
+                { FindObjectOfType<GameOver>().Gameovr(); }*/
+                return false;
+            }
             if (grid[roundedX, roundedY] != null)
                     return false;
         }

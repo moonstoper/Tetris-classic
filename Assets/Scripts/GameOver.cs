@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class GameOver : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -14,5 +15,11 @@ public class GameOver : MonoBehaviour
     void Update()
     {
         
+    }
+
+   public  void Gameovr()
+    {
+        Time.timeScale = 0f;
+
     }
 }
