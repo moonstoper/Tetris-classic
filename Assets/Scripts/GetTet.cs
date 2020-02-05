@@ -20,7 +20,7 @@ public class GetTet : MonoBehaviour
     public void spawnblock()
     {
         int num= FindObjectOfType<GetRandom>().GetRnum();
-        if(hastop())
+        if(Hastop())
         {
             FindObjectOfType<GameOver>().Gameovr();
         }
@@ -33,9 +33,9 @@ public class GetTet : MonoBehaviour
 
     }
 
-    bool hastop()
+    bool Hastop()
     {
-        if (FindObjectOfType<TetriBlock>().Hastop(17)==true)
+        if (FindObjectOfType<TetriBlock>().HasTop()==true)
         {
             return true;
         }

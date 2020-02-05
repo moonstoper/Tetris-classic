@@ -93,7 +93,7 @@ public class TetriBlock : MonoBehaviour
         return true;
     }
 
-    public bool Hastop(int j)
+    public bool HasTop()
     {
         if (grid[5, 17] != null)
             return true;
@@ -109,8 +109,9 @@ public class TetriBlock : MonoBehaviour
             {
                 DeleteLine(i);
                 //
-                FindObjectOfType<Scores>().Scoring();
+                
                 RowDown(i);
+                FindObjectOfType<Scores>().Scoring();
             }
         }
     }
