@@ -13,6 +13,7 @@ public class TetriBlock : MonoBehaviour
     public static int spawnx = 5;
     public static int spawny = 17;
     public static Transform[,] grid = new Transform[width, height];
+    int bonus = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -78,7 +79,7 @@ public class TetriBlock : MonoBehaviour
                 int roundedX = Mathf.RoundToInt(children.transform.position.x);
                 
                 int roundedY = Mathf.RoundToInt(children.transform.position.y);
-            Debug.Log(roundedY);
+            
             grid[roundedX, roundedY] = children;
             }
 
@@ -106,14 +107,18 @@ public class TetriBlock : MonoBehaviour
         for(int i=height-1;i>=0;i--)
         {
             if(HasLine(i))
-            {
+            {   
                 DeleteLine(i);
                 //
-                
+                bonus += 1;
+                Debug.Log(bonus);
                 RowDown(i);
                 FindObjectOfType<Scores>().Scoring();
             }
         }
+        
+        bonus = 0;
+        Debug.Log("After Reseting");
     }
 
     void DeleteLine(int i)
@@ -136,7 +141,7 @@ public class TetriBlock : MonoBehaviour
                     grid[x, y - 1] = grid[x, y];
                     grid[x, y] = null;
                    
-                    Debug.Log(grid[x, y - 1].transform.position);
+                    //Debug.Log(grid[x, y - 1].transform.position);
                     grid[x, y - 1].transform.position -= new Vector3(0,1,0);
                    
                 }
