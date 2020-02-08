@@ -21,10 +21,10 @@ public class Scores : MonoBehaviour
     }
 
     // Update is called once per frame
-    public void Scoring()
+    public void Scoring(int bonus)
     {
-        instant += multiplier * 10;
-        multiplier += 10;
+        instant += bonus*(100);
+        //multiplier += 10;
         score.text = instant.ToString();
         if(high<instant)
         {
@@ -32,6 +32,7 @@ public class Scores : MonoBehaviour
             hscore.text = instant.ToString();
             high = instant;
         }
+        Time.timeScale = Time.timeScale + .001f;
         return;
     }
 }

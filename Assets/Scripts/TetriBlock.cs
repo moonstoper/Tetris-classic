@@ -18,7 +18,9 @@ public class TetriBlock : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        int num = GetComponent<GetTet>().num;
+        rotationpoint = GetComponent<GetTet>().rotat[num];
+        Debug.Log(rotationpoint);
     }
 
     // Update is called once per frame
@@ -27,51 +29,81 @@ public class TetriBlock : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            transform.position = new Vector2(transform.position.x - 1, transform.position.y);
-            if (validmove() == false)
 
-                transform.position = new Vector2(transform.position.x + 1, transform.position.y);
-
-
+            LeftT();
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            transform.position = new Vector2(transform.position.x + 1, transform.position.y);
-            if (validmove() == false)
-                transform.position = new Vector2(transform.position.x - 1, transform.position.y);
+            RightT();
         }
         //
 
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            transform.RotateAround(transform.TransformPoint(rotationpoint), new Vector3(0, 0, 1), 90);
-           // Debug.Log(transform.rotation);
-            if (validmove() == false)
-                transform.RotateAround(transform.TransformPoint(rotationpoint), new Vector3(0, 0, 1), -90);
-
+            Rotat();
         }
         if (Time.time - previousT > (Input.GetKey(KeyCode.DownArrow) ? fallTime / 10 : fallTime))
         {
-            transform.position = new Vector2(transform.position.x, transform.position.y - 1);
-            if (validmove() == false)
-            {
-                Debug.Log("salvation");
-                transform.position = new Vector2(transform.position.x, transform.position.y + 1);
-                AddToGrid();
-                CheckLines();
-                this.enabled = false;
 
-                FindObjectOfType<GetTet>().spawnblock();
-
-                //Debug.Log("i am here");
-
-
-            }
-            previousT = Time.time;
-
+            Droop();
         }
 
     }
+
+
+
+    public void LeftT()
+    {
+        transform.position = new Vector2(transform.position.x - 1, transform.position.y);
+        if (validmove() == false)
+
+            transform.position = new Vector2(transform.position.x + 1, transform.position.y);
+        Debug.Log("left Click");
+        return;
+    }
+    public void RightT()
+    {
+        transform.position = new Vector2(transform.position.x + 1, transform.position.y);
+        if (validmove() == false)
+            transform.position = new Vector2(transform.position.x - 1, transform.position.y);
+        return;
+    }
+
+    public void Rotat()
+    {
+        transform.RotateAround(transform.TransformPoint(rotationpoint), new Vector3(0, 0, 1), 90);
+        // Debug.Log(transform.rotation);
+        if (validmove() == false)
+            transform.RotateAround(transform.TransformPoint(rotationpoint), new Vector3(0, 0, 1), -90);
+
+    }
+
+    public void Droop()
+    {
+        transform.position = new Vector2(transform.position.x, transform.position.y - 1);
+        if (validmove() == false)
+        {
+            Debug.Log("salvation");
+            transform.position = new Vector2(transform.position.x, transform.position.y + 1);
+            AddToGrid();
+            CheckLines();
+            this.enabled = false;
+            FindObjectOfType<GetTet>().spawnblock();
+            
+            
+
+           
+
+            //Debug.Log("i am here");
+
+
+        }
+        previousT = Time.time;
+    }
+
+
+
+
     void AddToGrid()
     {
             foreach (Transform children in transform)
@@ -113,10 +145,10 @@ public class TetriBlock : MonoBehaviour
                 bonus += 1;
                 Debug.Log(bonus);
                 RowDown(i);
-                FindObjectOfType<Scores>().Scoring();
+                
             }
         }
-        
+        FindObjectOfType<Scores>().Scoring(bonus);
         bonus = 0;
         Debug.Log("After Reseting");
     }

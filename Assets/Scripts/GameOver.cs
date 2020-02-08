@@ -6,6 +6,10 @@ using UnityEngine;
 public class GameOver : MonoBehaviour
 {
     // Start is called before the first frame update
+
+    public GameObject ScoreBoard;
+    public GameObject MovementButton;
+    public GameObject Gameover;
     void Start()
     {
         
@@ -19,7 +23,12 @@ public class GameOver : MonoBehaviour
 
    public  void Gameovr()
     {
+        ScoreBoard.SetActive(false);
+        MovementButton.SetActive(false);
+        Gameover.SetActive(true);
+
         Time.timeScale = 0f;
+
 
     }
 }

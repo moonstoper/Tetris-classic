@@ -21,7 +21,7 @@ public class GetRandom : MonoBehaviour
     {   
         rn=Random.Range(0,6);
         created= Instantiate(NextBlock[rn], transform.position, Quaternion.identity);
-        created.GetComponent<TetriBlock>().enabled = false;
+       // created.GetComponent<TetriBlock>().enabled = false;
         //return rn;
     }
      public int GetRnum()
