@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\GameOver.cs" />
     <Compile Include="Assets\Scripts\GetRandom.cs" />
     <Compile Include="Assets\Scripts\GetTet.cs" />
+    <Compile Include="Assets\Scripts\RotatingBack1.cs" />
     <Compile Include="Assets\Scripts\Scores.cs" />
     <Compile Include="Assets\Scripts\TetriBlock.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />

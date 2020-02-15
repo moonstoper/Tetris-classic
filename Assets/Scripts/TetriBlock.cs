@@ -149,7 +149,12 @@ public class TetriBlock : MonoBehaviour
             }
         }
         FindObjectOfType<Scores>().Scoring(bonus);
-        bonus = 0;
+        if (bonus != 0)
+        {
+            FindObjectOfType<RotatingBack1>().UpdateBack();
+            bonus = 0;
+        }
+
         Debug.Log("After Reseting");
     }
 

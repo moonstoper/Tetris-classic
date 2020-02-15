@@ -32,7 +32,8 @@ public class Scores : MonoBehaviour
             hscore.text = instant.ToString();
             high = instant;
         }
-        Time.timeScale = Time.timeScale + .001f;
+        Time.timeScale = Time.timeScale + .005f;
+        
         return;
     }
 }

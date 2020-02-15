@@ -5,6 +5,7 @@ ScriptsOnlyBuild:
     - GameOver
     - GetRandom
     - GetTet
+    - RotatingBack1
     - Scores
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
@@ -185,6 +186,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 14334}
     - Class: 114
       Script: {instanceID: 14340}
+    - Class: 114
+      Script: {instanceID: 16552}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -862,6 +865,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: ad2361348bdd98e867b5f8eb3dd29f69
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: RotatingBack1
   platform: 13
   scenePathNames:
   - Assets/Scenes/Main.unity

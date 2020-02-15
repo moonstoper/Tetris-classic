@@ -22,7 +22,8 @@ public class GameOver : MonoBehaviour
     }
 
    public  void Gameovr()
-    {
+    {   
+
         ScoreBoard.SetActive(false);
         MovementButton.SetActive(false);
         Gameover.SetActive(true);
