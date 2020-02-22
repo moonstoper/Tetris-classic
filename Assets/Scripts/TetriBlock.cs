@@ -24,7 +24,7 @@ public class TetriBlock : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
 
         if (Input.GetKeyDown(KeyCode.LeftArrow))
@@ -45,7 +45,7 @@ public class TetriBlock : MonoBehaviour
         if (Time.time - previousT > (Input.GetKey(KeyCode.DownArrow) ? fallTime / 10 : fallTime))
         {
 
-            Droop();
+            Droop(fallTime);
         }
 
     }
@@ -58,7 +58,7 @@ public class TetriBlock : MonoBehaviour
         if (validmove() == false)
 
             transform.position = new Vector2(transform.position.x + 1, transform.position.y);
-        Debug.Log("left Click");
+        //Debug.Log("left Click");
         return;
     }
     public void RightT()
@@ -78,8 +78,9 @@ public class TetriBlock : MonoBehaviour
 
     }
 
-    public void Droop()
+    public void Droop(float fallt)
     {
+        fallTime = fallt;
         transform.position = new Vector2(transform.position.x, transform.position.y - 1);
         if (validmove() == false)
         {
@@ -148,9 +149,10 @@ public class TetriBlock : MonoBehaviour
                 
             }
         }
-        FindObjectOfType<Scores>().Scoring(bonus);
+        
         if (bonus != 0)
         {
+            FindObjectOfType<Scores>().Scoring(bonus);
             FindObjectOfType<RotatingBack1>().UpdateBack();
             bonus = 0;
         }

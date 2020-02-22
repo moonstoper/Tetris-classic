@@ -23,16 +23,20 @@ public class GetTet : MonoBehaviour
     public void spawnblock()
     {   
          num= FindObjectOfType<GetRandom>().GetRnum();
-        if(Hastop())
+        if (Hastop())
         {
             FindObjectOfType<GameOver>().Gameovr();
-        }
-        GameObject newT=Instantiate(Tetblock[num], transform.position, Quaternion.identity);
-        newT.AddComponent<TetriBlock>();
-        newT.GetComponent<TetriBlock>().rotationpoint = rotat[num];
-        FindObjectOfType<GetRandom>().GetBlock();
 
-        // Destroy(FindObjectOfType<GetRandom>().created);
+        }
+        else
+        {
+            GameObject newT = Instantiate(Tetblock[num], transform.position, Quaternion.identity);
+            newT.AddComponent<TetriBlock>();
+            newT.GetComponent<TetriBlock>().rotationpoint = rotat[num];
+            FindObjectOfType<GetRandom>().GetBlock();
+
+            // Destroy(FindObjectOfType<GetRandom>().created);
+        }
 
 
     }
