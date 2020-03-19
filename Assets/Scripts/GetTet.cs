@@ -7,6 +7,7 @@ public class GetTet : MonoBehaviour
 {
     public GameObject[] Tetblock = new GameObject[7];
     public Vector3[] rotat = new Vector3[7];
+    public GameObject getdwn;
    // public GameObject[] GhostB = new GameObject[7];
     //Transform gridT[]
     public GameObject todes;
@@ -17,6 +18,7 @@ public class GetTet : MonoBehaviour
         num = x;
         GameObject newT=Instantiate(Tetblock[x], transform.position, Quaternion.identity);
         newT.AddComponent<TetriBlock>();
+        newT.GetComponent<TetriBlock>().rotationpoint = rotat[num];
         //GameObject ghostNew = Instantiate(todes, transform.position, Quaternion.identity);
         //ghostNew.AddComponent<TetriBlock>().ghost = ghostNew;
         GameObject.Find("NextTile").GetComponent<GetRandom>().GetBlock();
@@ -37,6 +39,8 @@ public class GetTet : MonoBehaviour
             GameObject newT = Instantiate(Tetblock[num], transform.position, Quaternion.identity);
             newT.AddComponent<TetriBlock>();
             newT.GetComponent<TetriBlock>().rotationpoint = rotat[num];
+            
+
             FindObjectOfType<GetRandom>().GetBlock();
            // GameObject ghostNew=Instantiate(GhostB[num], transform.position, Quaternion.identity);
            // ghostNew.AddComponent<Pre_Pos>().Org = newT;

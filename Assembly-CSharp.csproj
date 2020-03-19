@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\Pre_Pos.cs" />
     <Compile Include="Assets\Scripts\RotatingBack1.cs" />
     <Compile Include="Assets\Scripts\Scores.cs" />
+    <Compile Include="Assets\Scripts\Tail.cs" />
     <Compile Include="Assets\Scripts\TetriBlock.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />

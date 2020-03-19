@@ -10,8 +10,9 @@ public class Buttons : MonoBehaviour, IPointerDownHandler, IPointerUpHandler,IPo
     // Start is called before the first frame update
 
     public float durationThreshold = 0.05f;
-    public float timer;
+    public float timer=1f;
     public bool isPressed = false;
+    //Buttons drop;
 
     //public UnityEvent onLongPres;
 
@@ -23,7 +24,7 @@ public class Buttons : MonoBehaviour, IPointerDownHandler, IPointerUpHandler,IPo
             if (Time.time - timer > durationThreshold)
             {
                 isPressed = false;
-                FindObjectOfType<TetriBlock>().Droop(0.8f / 10);
+                
             }
 
 
@@ -53,13 +54,13 @@ public class Buttons : MonoBehaviour, IPointerDownHandler, IPointerUpHandler,IPo
     }
 
     public void Drop()
-    { timer = Time.time;
-        isPressed = true;
-
-        FixedUpdate();
-       
+    {
+        //OnPointerDown(drop);
+        //FixedUpdate();
+        FindObjectOfType<TetriBlock>().Droop(.8f/10f);
 
     }
+
 
    
 
@@ -73,6 +74,7 @@ public class Buttons : MonoBehaviour, IPointerDownHandler, IPointerUpHandler,IPo
         //throw new System.NotImplementedException();
 
         isPressed = false;
+
     }
 
     public void OnPointerExit(PointerEventData eventData)

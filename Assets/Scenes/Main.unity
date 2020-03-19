@@ -1782,7 +1782,8 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 0}
-  todes: {fileID: 7611246694132945155, guid: 61d787024e8ff554698dc22f30211f4d, type: 3}
+  getdwn: {fileID: 5790300570812018845, guid: ca8c1d38c27bbf348991ec81bb948d8d, type: 3}
+  todes: {fileID: 5790300570812018845, guid: ca8c1d38c27bbf348991ec81bb948d8d, type: 3}
   num: 0
 --- !u!4 &1466906523
 Transform:
@@ -2055,7 +2056,7 @@ GameObject:
   - component: {fileID: 1774117501}
   - component: {fileID: 1774117500}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: gth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2070,11 +2071,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1774117499}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a06e0d555c09ab649b3d126f012094c3, type: 3}
+  m_Script: {fileID: 11500000, guid: 285c6bf7eb7f4e24d8158ce7b65ab897, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Org: {fileID: 0}
-  flx: {fileID: 5790300570812018845, guid: ca8c1d38c27bbf348991ec81bb948d8d, type: 3}
+  flx: {fileID: 7097674265332332193, guid: b760e46d9fc92d64097c1b4560f25b11, type: 3}
 --- !u!4 &1774117501
 Transform:
   m_ObjectHideFlags: 0

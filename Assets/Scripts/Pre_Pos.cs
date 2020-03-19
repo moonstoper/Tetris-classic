@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Pre_Pos : MonoBehaviour
 {
-    public GameObject Org;
+    public Transform Org;
     Vector2 xpoint;
     // float rotz;
     public GameObject flx;
@@ -24,9 +24,9 @@ public class Pre_Pos : MonoBehaviour
 
         int[,] pos = new int[4, 2];
         int a = 0, b = 0;
-        Org = GetComponent<TetriBlock>().gameObject;
-        Transform babes = Org.transform;
-        Debug.LogError(GetComponent<TetriBlock>().gameObject);
+        Org = GetComponent<TetriBlock>().transform;
+        Transform babes = GetComponent<TetriBlock>().transform;
+        Debug.LogError(babes);
         foreach (Transform child in babes)
         {
             int roundedx = Mathf.RoundToInt(child.transform.position.x);
