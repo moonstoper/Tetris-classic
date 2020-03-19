@@ -7,14 +7,18 @@ public class GetTet : MonoBehaviour
 {
     public GameObject[] Tetblock = new GameObject[7];
     public Vector3[] rotat = new Vector3[7];
+   // public GameObject[] GhostB = new GameObject[7];
     //Transform gridT[]
-    //public GameObject todes;
+    public GameObject todes;
     // Start is called before the first frame update
     public int num;
     void Start()
-    {
-        GameObject newT=Instantiate(Tetblock[Random.Range(0, 6)], transform.position, Quaternion.identity);
+    {  int x = Random.Range(0, 6);
+        num = x;
+        GameObject newT=Instantiate(Tetblock[x], transform.position, Quaternion.identity);
         newT.AddComponent<TetriBlock>();
+        //GameObject ghostNew = Instantiate(todes, transform.position, Quaternion.identity);
+        //ghostNew.AddComponent<TetriBlock>().ghost = ghostNew;
         GameObject.Find("NextTile").GetComponent<GetRandom>().GetBlock();
         
     }
@@ -34,7 +38,9 @@ public class GetTet : MonoBehaviour
             newT.AddComponent<TetriBlock>();
             newT.GetComponent<TetriBlock>().rotationpoint = rotat[num];
             FindObjectOfType<GetRandom>().GetBlock();
-
+           // GameObject ghostNew=Instantiate(GhostB[num], transform.position, Quaternion.identity);
+           // ghostNew.AddComponent<Pre_Pos>().Org = newT;
+            
             // Destroy(FindObjectOfType<GetRandom>().created);
         }
 

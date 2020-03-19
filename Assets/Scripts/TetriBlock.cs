@@ -15,30 +15,37 @@ public class TetriBlock : MonoBehaviour
     public static Transform[,] grid = new Transform[width, height];
     int bonus = 0;
 
+    public GameObject ghost;
     // Start is called before the first frame update
-    void Start()
-    {
+   private void Start()
+    {   
         int num = GetComponent<GetTet>().num;
+        Debug.Log("hiiiiiiiiiiiiiiiiiiii");
         rotationpoint = GetComponent<GetTet>().rotat[num];
         Debug.Log(rotationpoint);
+
+        
+        
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        
+        
+        if (Input.GetKeyUp(KeyCode.LeftArrow))
         {
 
             LeftT();
         }
-        else if (Input.GetKeyDown(KeyCode.RightArrow))
+        else if (Input.GetKeyUp(KeyCode.RightArrow))
         {
             RightT();
         }
         //
 
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyUp(KeyCode.UpArrow))
         {
             Rotat();
         }
@@ -47,6 +54,8 @@ public class TetriBlock : MonoBehaviour
 
             Droop(fallTime);
         }
+
+        
 
     }
 
@@ -72,9 +81,21 @@ public class TetriBlock : MonoBehaviour
     public void Rotat()
     {
         transform.RotateAround(transform.TransformPoint(rotationpoint), new Vector3(0, 0, 1), 90);
+        //FindObjectOfType<Pre_Pos>().transform.RotateAround(transform.TransformPoint(rotationpoint), new Vector3(0, 0, 1), 90);
+        //FindObjectOfType<Pre_Pos>().ghostrotat();
         // Debug.Log(transform.rotation);
+        int r = 90;
         if (validmove() == false)
+        {
             transform.RotateAround(transform.TransformPoint(rotationpoint), new Vector3(0, 0, 1), -90);
+            //FindObjectOfType<Pre_Pos>().transform.RotateAround(transform.TransformPoint(rotationpoint), new Vector3(0, 0, 1),-90);
+            //FindObjectOfType<Pre_Pos>().ghostrotat();
+            r = -90;
+        }
+
+
+        
+        
 
     }
 
@@ -88,12 +109,17 @@ public class TetriBlock : MonoBehaviour
             transform.position = new Vector2(transform.position.x, transform.position.y + 1);
             AddToGrid();
             CheckLines();
+            //
+            
+                        //FindObjectOfType<Pre_Pos>().DestroUrself();
             this.enabled = false;
-            FindObjectOfType<GetTet>().spawnblock();
-            
-            
-
            
+            FindObjectOfType<GetTet>().spawnblock();
+           
+
+
+
+
 
             //Debug.Log("i am here");
 
@@ -188,11 +214,14 @@ public class TetriBlock : MonoBehaviour
         }
     }
 
-    bool validmove()
+    public bool validmove()
     {
-        foreach(Transform children in transform)
+        
+        
+        foreach (Transform children in transform)
         {
             int roundedX = Mathf.RoundToInt(children.transform.position.x);
+
             // Debug.Log(roundedX);
             int roundedY = Mathf.RoundToInt(children.transform.position.y);
             //Debug.Log(children.name);
@@ -210,4 +239,16 @@ public class TetriBlock : MonoBehaviour
         }
         return true;
     }
+
+
+    public bool checkforGhost(int roundedX,int roundedY)
+    {
+        if (grid[roundedX, roundedY] != null)
+            return false;
+
+        return true;
+
+
+    }
+  
 }

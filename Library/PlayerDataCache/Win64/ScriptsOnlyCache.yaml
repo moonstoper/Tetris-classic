@@ -6,6 +6,7 @@ ScriptsOnlyBuild:
     - GameOver
     - GetRandom
     - GetTet
+    - Pre_Pos
     - RotatingBack1
     - Scores
     Unity.2D.Tilemap.Editor.dll:
@@ -94,111 +95,113 @@ ScriptsOnlyBuild:
     - Class: 109
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11274}
+      Script: {instanceID: 11280}
     - Class: 114
-      Script: {instanceID: 11314}
+      Script: {instanceID: 11320}
     - Class: 114
-      Script: {instanceID: 11384}
+      Script: {instanceID: 11390}
     - Class: 114
-      Script: {instanceID: 11434}
+      Script: {instanceID: 11440}
     - Class: 114
-      Script: {instanceID: 11490}
+      Script: {instanceID: 11496}
     - Class: 114
-      Script: {instanceID: 11510}
+      Script: {instanceID: 11516}
     - Class: 114
-      Script: {instanceID: 11604}
+      Script: {instanceID: 11610}
     - Class: 114
-      Script: {instanceID: 11608}
+      Script: {instanceID: 11614}
     - Class: 114
-      Script: {instanceID: 11682}
+      Script: {instanceID: 11688}
     - Class: 114
-      Script: {instanceID: 11716}
+      Script: {instanceID: 11722}
     - Class: 114
-      Script: {instanceID: 11850}
+      Script: {instanceID: 11856}
     - Class: 114
-      Script: {instanceID: 11882}
+      Script: {instanceID: 11888}
     - Class: 114
-      Script: {instanceID: 12098}
+      Script: {instanceID: 12104}
     - Class: 114
-      Script: {instanceID: 12176}
+      Script: {instanceID: 12182}
     - Class: 114
-      Script: {instanceID: 12218}
+      Script: {instanceID: 12224}
     - Class: 114
-      Script: {instanceID: 12284}
+      Script: {instanceID: 12290}
     - Class: 114
-      Script: {instanceID: 12400}
+      Script: {instanceID: 12406}
     - Class: 114
-      Script: {instanceID: 12438}
+      Script: {instanceID: 12444}
     - Class: 114
-      Script: {instanceID: 12452}
+      Script: {instanceID: 12458}
     - Class: 114
-      Script: {instanceID: 12454}
+      Script: {instanceID: 12460}
     - Class: 114
-      Script: {instanceID: 12502}
+      Script: {instanceID: 12508}
     - Class: 114
-      Script: {instanceID: 12702}
+      Script: {instanceID: 12510}
     - Class: 114
-      Script: {instanceID: 12740}
+      Script: {instanceID: 12708}
     - Class: 114
-      Script: {instanceID: 12796}
+      Script: {instanceID: 12746}
     - Class: 114
-      Script: {instanceID: 12890}
+      Script: {instanceID: 12802}
     - Class: 114
-      Script: {instanceID: 13150}
+      Script: {instanceID: 12896}
     - Class: 114
-      Script: {instanceID: 13176}
+      Script: {instanceID: 13156}
     - Class: 114
-      Script: {instanceID: 13300}
+      Script: {instanceID: 13182}
     - Class: 114
-      Script: {instanceID: 13452}
+      Script: {instanceID: 13306}
     - Class: 114
-      Script: {instanceID: 13512}
+      Script: {instanceID: 13458}
     - Class: 114
-      Script: {instanceID: 13516}
+      Script: {instanceID: 13518}
     - Class: 114
-      Script: {instanceID: 13532}
+      Script: {instanceID: 13522}
     - Class: 114
       Script: {instanceID: 13538}
     - Class: 114
-      Script: {instanceID: 13650}
+      Script: {instanceID: 13544}
     - Class: 114
-      Script: {instanceID: 13680}
+      Script: {instanceID: 13656}
     - Class: 114
-      Script: {instanceID: 13690}
+      Script: {instanceID: 13686}
     - Class: 114
-      Script: {instanceID: 13880}
+      Script: {instanceID: 13696}
     - Class: 114
-      Script: {instanceID: 13982}
+      Script: {instanceID: 13886}
     - Class: 114
-      Script: {instanceID: 13998}
+      Script: {instanceID: 13988}
     - Class: 114
-      Script: {instanceID: 14050}
+      Script: {instanceID: 14004}
     - Class: 114
-      Script: {instanceID: 14072}
+      Script: {instanceID: 14056}
     - Class: 114
-      Script: {instanceID: 14280}
+      Script: {instanceID: 14078}
     - Class: 114
-      Script: {instanceID: 14326}
+      Script: {instanceID: 14286}
     - Class: 114
-      Script: {instanceID: 14458}
+      Script: {instanceID: 14332}
     - Class: 114
-      Script: {instanceID: 14504}
+      Script: {instanceID: 14464}
     - Class: 114
-      Script: {instanceID: 14634}
+      Script: {instanceID: 14510}
     - Class: 114
-      Script: {instanceID: 14702}
+      Script: {instanceID: 14640}
     - Class: 114
-      Script: {instanceID: 14704}
+      Script: {instanceID: 14708}
     - Class: 114
-      Script: {instanceID: 14732}
+      Script: {instanceID: 14710}
     - Class: 114
-      Script: {instanceID: 14754}
+      Script: {instanceID: 14738}
     - Class: 114
-      Script: {instanceID: 14756}
+      Script: {instanceID: 14760}
     - Class: 114
-      Script: {instanceID: 14866}
+      Script: {instanceID: 14762}
     - Class: 114
       Script: {instanceID: 14872}
+    - Class: 114
+      Script: {instanceID: 14878}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -216,6 +219,12 @@ ScriptsOnlyBuild:
     - Class: 224
       Script: {instanceID: 0}
   scriptHashData:
+  - hash:
+      serializedVersion: 2
+      Hash: 090a3c84271bd169fd6977e6879c7c00
+    assemblyName: Unity.RenderPipelines.Universal.Runtime.dll
+    namespaceName: UnityEngine.Rendering.Universal
+    className: UniversalRenderPipelineAsset
   - hash:
       serializedVersion: 2
       Hash: 4bc4346a71a8df53a6b106f68ef3a190
@@ -446,7 +455,7 @@ ScriptsOnlyBuild:
     className: TMP_SubMeshUI
   - hash:
       serializedVersion: 2
-      Hash: f28124a53775ff79068b5390790911ef
+      Hash: 4882855d88791255b598ffe04135db05
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GetTet
@@ -530,6 +539,12 @@ ScriptsOnlyBuild:
     className: Selectable
   - hash:
       serializedVersion: 2
+      Hash: c073e0eecd1f0d73b8ebcc64f97e17bf
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Pre_Pos
+  - hash:
+      serializedVersion: 2
       Hash: 5e1eefcd5106de6c2e85908a3b2d3f04
     assemblyName: Unity.RenderPipelines.Core.Runtime.dll
     namespaceName: UnityEngine.Rendering.UI
@@ -540,12 +555,6 @@ ScriptsOnlyBuild:
     assemblyName: Unity.RenderPipelines.Universal.Runtime.dll
     namespaceName: UnityEngine.Rendering.Universal
     className: FilmGrain
-  - hash:
-      serializedVersion: 2
-      Hash: 090a3c84271bd169fd6977e6879c7c00
-    assemblyName: Unity.RenderPipelines.Universal.Runtime.dll
-    namespaceName: UnityEngine.Rendering.Universal
-    className: UniversalRenderPipelineAsset
   - hash:
       serializedVersion: 2
       Hash: 1eba9adea13eac3002756dbdfd16f61e

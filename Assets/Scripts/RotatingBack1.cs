@@ -15,7 +15,7 @@ public class RotatingBack1 : MonoBehaviour
     public void UpdateBack()
     {
         //Color c = ;
-        GetComponent<SpriteRenderer>().color = Color.Lerp(GetComponent<SpriteRenderer>().color, colour[Random.Range(0, 7)],30);
+        GetComponent<SpriteRenderer>().color = Color.Lerp(GetComponent<SpriteRenderer>().color, colour[Random.Range(0, 7)],30f);
         
     }
 }

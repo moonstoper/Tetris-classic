@@ -10,6 +10,7 @@ public class GameOver : MonoBehaviour
     public GameObject ScoreBoard;
     public GameObject MovementButton;
     public GameObject Gameover;
+    
     void Start()
     {
         
