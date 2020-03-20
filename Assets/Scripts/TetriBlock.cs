@@ -61,7 +61,7 @@ public class TetriBlock : MonoBehaviour
         if (validmove() == false)
 
             transform.position = new Vector2(transform.position.x + 1, transform.position.y);
-        FindObjectOfType<Tail>().from_valid(this.gameObject);
+        FindObjectOfType<Tail>().from_valid(this.gameObject,fallTime);
         return;
     }
     public void RightT()
@@ -69,7 +69,7 @@ public class TetriBlock : MonoBehaviour
         transform.position = new Vector2(transform.position.x + 1, transform.position.y);
         if (validmove() == false)
             transform.position = new Vector2(transform.position.x - 1, transform.position.y);
-        FindObjectOfType<Tail>().from_valid(this.gameObject);
+        FindObjectOfType<Tail>().from_valid(this.gameObject,fallTime);
         return;
     }
 
@@ -84,7 +84,7 @@ public class TetriBlock : MonoBehaviour
             
             r = -90;
         }
-        FindObjectOfType<Tail>().from_valid(this.gameObject);
+        FindObjectOfType<Tail>().from_valid(this.gameObject,fallTime);
 
 
 
@@ -96,7 +96,7 @@ public class TetriBlock : MonoBehaviour
     {
         fallTime = fallt;
         transform.position = new Vector2(transform.position.x, transform.position.y - 1);
-        FindObjectOfType<Tail>().from_valid(this.gameObject);
+        FindObjectOfType<Tail>().from_valid(this.gameObject,fallTime/2);
         if (validmove() == false)
         {
             Debug.Log("salvation");
