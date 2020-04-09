@@ -25,9 +25,9 @@ public class GetRandom : MonoBehaviour
     public void GetBlock()
     {  
         //from here
-        if(total<=0)
+        if(total==0)
         { 
-           for(int m=0;m<total;m++)
+           for(int m=0;m<7;m++)
             {
                 numbers[m] = m;
                 //num += 1;
@@ -43,7 +43,7 @@ public class GetRandom : MonoBehaviour
         {
            if(numbers[a]==ins)
             {
-                for (int z = a; a < total-1; a++)
+                for (int z = a; z < total-1; z++)
                     numbers[z] = numbers[z + 1];
             }
         }
