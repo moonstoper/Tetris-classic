@@ -26,8 +26,8 @@ public class TetriBlock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        
+
+
         if (Input.GetKeyUp(KeyCode.LeftArrow))
         {
 
@@ -37,7 +37,7 @@ public class TetriBlock : MonoBehaviour
         {
             RightT();
         }
-       
+
 
         if (Input.GetKeyUp(KeyCode.UpArrow))
         {
@@ -45,11 +45,13 @@ public class TetriBlock : MonoBehaviour
         }
         if (Time.time - previousT > (Input.GetKey(KeyCode.DownArrow) ? fallTime / 10 : fallTime))
         {
-
+           
             Droop(fallTime);
+            previousT = Time.time;
+            Debug.Log(Time.time - previousT);
+           
         }
 
-        
 
     }
 
@@ -61,7 +63,7 @@ public class TetriBlock : MonoBehaviour
         if (validmove() == false)
 
             transform.position = new Vector2(transform.position.x + 1, transform.position.y);
-        FindObjectOfType<Tail>().from_valid(this.gameObject,fallTime);
+        FindObjectOfType<Tail>().from_valid(this.gameObject,.9f);
         return;
     }
     public void RightT()
@@ -69,7 +71,7 @@ public class TetriBlock : MonoBehaviour
         transform.position = new Vector2(transform.position.x + 1, transform.position.y);
         if (validmove() == false)
             transform.position = new Vector2(transform.position.x - 1, transform.position.y);
-        FindObjectOfType<Tail>().from_valid(this.gameObject,fallTime);
+        FindObjectOfType<Tail>().from_valid(this.gameObject,.9f);
         return;
     }
 
@@ -84,7 +86,7 @@ public class TetriBlock : MonoBehaviour
             
             r = -90;
         }
-        FindObjectOfType<Tail>().from_valid(this.gameObject,fallTime);
+        FindObjectOfType<Tail>().from_valid(this.gameObject,.9f);
 
 
 
@@ -96,7 +98,7 @@ public class TetriBlock : MonoBehaviour
     {
         fallTime = fallt;
         transform.position = new Vector2(transform.position.x, transform.position.y - 1);
-        FindObjectOfType<Tail>().from_valid(this.gameObject,fallTime/2);
+        FindObjectOfType<Tail>().from_valid(this.gameObject,.9f/2);
         if (validmove() == false)
         {
             Debug.Log("salvation");
@@ -119,7 +121,9 @@ public class TetriBlock : MonoBehaviour
 
 
         }
-        previousT = Time.time;
+        fallTime = 0.8f;
+
+
     }
 
 
@@ -170,14 +174,14 @@ public class TetriBlock : MonoBehaviour
             }
         }
         
-        if (bonus != 0)
+        if (bonus > 0)
         {
             FindObjectOfType<Scores>().Scoring(bonus);
             FindObjectOfType<RotatingBack1>().UpdateBack();
             bonus = 0;
         }
 
-        Debug.Log("After Reseting");
+        //Debug.Log("After Reseting");
     }
 
     void DeleteLine(int i)

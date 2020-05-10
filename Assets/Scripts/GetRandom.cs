@@ -31,7 +31,7 @@ public class GetRandom : MonoBehaviour
             {
                 numbers[m] = m;
                 //num += 1;
-                Debug.Log(m);
+                //Debug.Log(m);
             }
             total = 7;
            

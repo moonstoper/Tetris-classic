@@ -40,7 +40,7 @@ public class Tail : MonoBehaviour
         {
             for (int y = 0; y < 2; y++)
             {
-                Debug.Log(pos[x, y]);
+                //Debug.Log(pos[x, y]);
             }
         }
 
